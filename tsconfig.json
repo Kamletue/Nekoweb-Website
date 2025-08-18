@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "target": "ES2022",
+        "baseUrl": "./",
+        "jsx": "react-jsx",
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "sourceMap": true,
+        "paths": {
+            "three/webgpu": ["node_modules/three/build/three.webgpu.js"],
+            "three/tsl": ["node_modules/three/build/three.tsl.js"],
+        },
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}
