@@ -1,5 +1,4 @@
 let url = 'https://nekoweb.org/api/site/info/kamuretsu.nekoweb.org';
-//let url = "https://jsonplaceholder.typicode.com/todos/1";
 let results: string;
 let options = {
     method: 'GET',
