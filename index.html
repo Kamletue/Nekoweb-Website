@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="styles.css" />
+    <!-- importmap for "three" and the obj loader. -->
+    <script type="importmap">
+    	{
+    		"imports": {
+    			"three": "https://kamuretsu.nekoweb.org/node_modules/three/build/three.module.js",
+    			"three/addons/loaders/OBJLoader.js": "https://kamuretsu.nekoweb.org/node_modules/three/examples/jsm/loaders/OBJLoader.js"
+    		}
+    	}
+    </script>
     <title>カムレツ</title>
     <script type="module" src="src/stats.js"></script>
   </head>

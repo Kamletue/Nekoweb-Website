@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
-import { color } from 'three/tsl';
 
 const scene = new THREE.Scene();
 const loader = new OBJLoader();
