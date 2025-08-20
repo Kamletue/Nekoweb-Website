@@ -2,13 +2,17 @@ import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 const scene = new THREE.Scene();
 const loader = new OBJLoader();
+let renderer;
+const canvasParent = document.getElementById("WebGLThing");
 const colorForOBJ = "rgb(230, 171, 11)";
 console.log(colorForOBJ);
 //Adapt size to css width and height.
 const sizesForWebGLCanvas = getComputedStyle(document.documentElement);
 let theTeaPot;
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+if (canvasParent) {
+    renderer = new THREE.WebGLRenderer({ canvas: canvasParent, antialias: true });
+}
 renderer.setSize(parseInt(sizesForWebGLCanvas.getPropertyValue("--width-webgl")), parseInt(sizesForWebGLCanvas.getPropertyValue("--height-webgl")));
 document.body.appendChild(renderer.domElement);
 const material = new THREE.MeshBasicMaterial({ color: colorForOBJ });

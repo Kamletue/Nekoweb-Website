@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- importmap for "three" and the obj loader. -->
-    <script type="importmap">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- importmap for "three" and the obj loader. -->
+  <script type="importmap">
     	{
     		"imports": {
     			"three": "https://kamuretsu.nekoweb.org/node_modules/three/build/three.module.js",
@@ -12,17 +13,29 @@
     		}
     	}
     </script>
-    <title>カムレツ</title>
-    <script type="module" src="src/stats.js"></script>
-  </head>
+  <title>カムレツ</title>
+  <script type="module" src="src/stats.js"></script>
+</head>
 
-  <body style="background-color: rgb(88, 68, 184);">
-    <h1>カムレツ</h1>
-    <div class="WelcomeDiv" id="WelcomeDiv">
-      Welcome to my website. This is where I'll share random stuff. I liked the idea of having a personal place everybody could see. This website was created on Sunday, August 17, 2025. 
+<body style="background-color: rgb(88, 68, 184)">
+  <div class="wrapper">
+    <header class="header">
+      <div class="headerDiv">
+        <h1>カムレツ</h1>
+      </div>
+    </header>
+
+    <div class="divWelcome" id="divWelcome">
+      Welcome to my website. This is where I'll share random stuff. I liked the idea of having a personal place
+      everybody could see. This website was created on Sunday, August 17, 2025.
     </div>
-      <canvas class="WebGLThing">
-        <script type="module" src="src/webgl.js"></script>
-      </canvas>
-  </body>
+    <canvas class="WebGLThing" id="WebGLThing">
+      <script type="module" src="src/webgl.js"></script>
+    </canvas>
+    <article class="lastUpdatedArticle" id="lastUpdatedArticle">
+      Website last update: <span class="lastUpdatedText" id="lastUpdatedText">*Last date would be here*</span>
+    </article>
+  </div>
+</body>
+
 </html>

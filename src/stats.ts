@@ -3,10 +3,7 @@ let results: string;
 let options = {
     method: 'GET',
 };
-let welcometext = document.getElementById("WelcomeDiv");
-let placeholder = 1755533657027;
-let date = new Date(placeholder * 1000);
-
+let dateText = document.getElementById("lastUpdatedText");
 
 async function getStats() {
     try {
@@ -21,12 +18,12 @@ async function getStats() {
 
         let e = JSON.parse(results);
 
-        if (welcometext && e) {
-
-            welcometext.innerText = e.updated_at;
+        if (dateText && e) {
+            let date = new Date(e.updated_at);
+            dateText.innerText = date.toUTCString();
         }
-        else if (welcometext) {
-            welcometext.innerText = "Couldn't fetch last update time ;("
+        else if (dateText) {
+            dateText.innerText = "Couldn't fetch last update time ;("
         }
         else {
             throw new Error("Can't get desired div.");
@@ -39,4 +36,4 @@ async function getStats() {
 
 
 }
-//getStats();
+//getStats(); Only uncomment when publishing to prevent getting rate limited
