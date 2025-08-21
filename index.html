@@ -17,24 +17,42 @@
   <script type="module" src="src/stats.js"></script>
 </head>
 
-<body style="background-color: rgb(88, 68, 184)">
+<body style="background-color: rgba(8, 8, 11, 0.863)">
   <div class="wrapper">
     <header class="header">
-      <div class="headerDiv">
-        <h1>カムレツ</h1>
-      </div>
+      <h1><a class="headerLinkText" href="https://kamuretsu.nekoweb.org">カムレツ</a></h1>
     </header>
-
-    <div class="divWelcome" id="divWelcome">
-      Welcome to my website. This is where I'll share random stuff. I liked the idea of having a personal place
-      everybody could see. This website was created on Sunday, August 17, 2025.
-    </div>
-    <canvas class="WebGLThing" id="WebGLThing">
-      <script type="module" src="src/webgl.js"></script>
-    </canvas>
-    <article class="lastUpdatedArticle" id="lastUpdatedArticle">
-      Website last update: <span class="lastUpdatedText" id="lastUpdatedText">*Last date would be here*</span>
-    </article>
+    <table class="tableMain">
+      <tbody>
+        <tr class="rowMain">
+          <td class="dataMain">
+            <div class="divWelcome" id="divWelcome">
+              <h2 style="display: inline;"><em>Welcome to my website.</em></h2>
+              <p>This is where I'll share random stuff. I liked the idea of having a personal place
+                everybody could see. This website was created on Sunday, August 17, 2025.
+              </p>
+              <p>
+                I guess I could be considered a programmer when not <em style="color: crimson;">terminally lazy.</em>
+              </p>
+              <p>Here's a WebGL Teapot:
+              </p>
+          </td>
+          <div id="webGLdiv">
+            <canvas class="webGLcanvas" id="webGLcanvas">
+              <script type="module" src="src/webgl.js"></script>
+            </canvas>
+          </div>
+        </tr>
+        <tr class="rowSide">
+          <td class="dataSide">
+            <article class="lastUpdatedArticle" id="lastUpdatedArticle">
+              Website last update: <span class="lastUpdatedText" id="lastUpdatedText">*Last date would be here*</span>
+            </article>
+          </td>
+        </tr>
+  </div>
+  </tbody>
+  </table>
   </div>
 </body>
 

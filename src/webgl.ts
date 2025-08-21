@@ -4,28 +4,33 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 const scene = new THREE.Scene();
 const loader = new OBJLoader();
 let renderer;
-const canvasParent = document.getElementById("WebGLThing");
+const canvasParent = document.getElementById("webGLcanvas");
+const webglDiv =  document.getElementById("webGLdiv");
+const welcomePDiv =  document.getElementById("divWelcome");
 const colorForOBJ = "rgb(230, 171, 11)";
-console.log(colorForOBJ);
-//Adapt size to css width and height.
+
 const sizesForWebGLCanvas = getComputedStyle(document.documentElement);
 
 let theTeaPot: THREE.Group<THREE.Object3DEventMap>;
 
-const camera = new THREE.PerspectiveCamera(75,
+const camera = new THREE.PerspectiveCamera(65,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
 );
-if (canvasParent) {
+if (canvasParent && webglDiv && welcomePDiv) {
    renderer = new THREE.WebGLRenderer({canvas: canvasParent, antialias: true});
+   welcomePDiv.appendChild(webglDiv)
+   .appendChild(renderer.domElement);
 }
-renderer.setSize(parseInt(sizesForWebGLCanvas.getPropertyValue("--width-webgl")),
+/* renderer.setSize(parseInt(sizesForWebGLCanvas.getPropertyValue("--width-webgl")),
     parseInt(sizesForWebGLCanvas.getPropertyValue("--height-webgl"))
-);
-document.body.appendChild(renderer.domElement);
-
-const material = new THREE.MeshBasicMaterial({ color: colorForOBJ})
+); */
+renderer.setSize(parseInt(sizesForWebGLCanvas.getPropertyValue("--width-webgl")),
+ parseInt(sizesForWebGLCanvas.getPropertyValue("--height-webgl")));
+webglDiv?.setAttribute("style", "width:" + canvasParent?.clientWidth + "px;"
+     + "height:" + canvasParent?.clientHeight + "px;")
+const material = new THREE.MeshBasicMaterial({ color: colorForOBJ});
 //const cube = new THREE.Mesh(geometry, material);
 //scene.add(cube);
 loader.load('./teapot.obj', function (obj) {
@@ -37,8 +42,10 @@ loader.load('./teapot.obj', function (obj) {
     theTeaPot = obj;
     scene.add(obj);
 });
-camera.position.z = 10;
-camera.rotateZ(-0.15)
+camera.position.z = 5;
+camera.position.y = 2;
+camera.rotateZ(-0.20)
+
 function animate() {
     renderer.render(scene, camera);
     if (theTeaPot) {

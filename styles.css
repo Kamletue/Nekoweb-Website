@@ -1,6 +1,6 @@
 :root {
-    --width-webgl: 400;
-    --height-webgl: 400;
+    --width-webgl: 140;
+    --height-webgl: 100;
 }
 
 @font-face {
@@ -10,28 +10,63 @@
 }
 
 h1 {
-    color:brown
+    text-align: center;
+    position: relative;
+}
+
+.tableMain {
+    margin: 0 auto;
+}
+
+.headerLinkText {
+    text-decoration: none;
+    font-size: 15e;
+    position: relative;
+    color: rgb(146, 146, 236);
+    transition: letter-spacing 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.headerLinkText:hover {
+    letter-spacing: 1em;
+    width: fit-content;
+}
+
+.headerLinkText:hover::after {
+    width: 90%;
+}
+
+.headerLinkText::after {
+    content: "";
+    position: absolute;
+    background-color: brown;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    transition: width .2s;
 }
 
 .divWelcome {
     font-family: "SpaceGrotesk";
-    font-style: italic;
-    font-size: larger;
+    padding-inline: 5px;
     font-weight: bolder;
+    color: azure;
     border: 5px solid black;
-    width: 25em;
-    height: 5em;
+    height: fit-content;
+    width: 35em;
 }
 
-.WebGLThing {
-    box-sizing: border-box;
-    width: var(--width-webgl);
-    height: var(--height-webgl);
+.webGLcanvas {
+    border: 1px solid snow;
+    margin-top: -10px;
 }
 
 .lastUpdatedArticle {
     font-family: "SpaceGrotesk";
     font-size: large;
-    width: max-content;
+    vertical-align: auto;
+    color: azure;
+    width: 10em;
     border: 5px solid black;
 }

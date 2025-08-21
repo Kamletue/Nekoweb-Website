@@ -1,1 +1,2 @@
 Use the npx vite command for server
+Ctrl + Shift + R to update full webpage

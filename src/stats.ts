@@ -36,4 +36,4 @@ async function getStats() {
 
 
 }
-//getStats(); Only uncomment when publishing to prevent getting rate limited
+//getStats(); Only uncomment when publishing, prevent getting rate limited

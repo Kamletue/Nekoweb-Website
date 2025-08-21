@@ -28,5 +28,5 @@ async function getStats() {
         console.error(e);
     }
 }
-//getStats(); Only uncomment when publishing to prevent getting rate limited
+//getStats(); Only uncomment when publishing, prevent getting rate limited
 //# sourceMappingURL=stats.js.map
